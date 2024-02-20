@@ -9,6 +9,7 @@ url="https://github.com/pop-os/cosmic-applets"
 license=('GPL-3.0-or-later')
 groups=('cosmic')
 depends=(
+#  'cosmic-icons-git'
 #  'cosmic-panel-git'
   'dbus'
   'hicolor-icon-theme'
@@ -23,6 +24,7 @@ makedepends=(
   'just'
   'mold'
 )
+optdepends=('pipewire-pulse')
 provides=("${pkgname%-git}")
 conflicts=("${pkgname%-git}")
 options=('!lto')
