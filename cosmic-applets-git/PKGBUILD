@@ -11,14 +11,11 @@ groups=('cosmic')
 depends=(
 #  'cosmic-launcher-git'
 #  'cosmic-panel-git'
-  'gtk4'
-  'libinput'
-  'libglvnd'
+  'dbus'
+  'hicolor-icon-theme'
   'libpulse'
   'libxkbcommon'
-  'pop-launcher-git'
   'systemd-libs'
-  'wayland'
 )
 makedepends=(
   'cargo'
