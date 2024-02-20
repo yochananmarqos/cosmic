@@ -13,8 +13,8 @@ depends=(
 #  'cosmic-panel-git'
   'dbus'
   'hicolor-icon-theme'
-  'libpulse'
   'libxkbcommon'
+  'pulse-native-provider'
   'systemd-libs'
 )
 makedepends=(
@@ -23,7 +23,6 @@ makedepends=(
   'just'
   'mold'
 )
-optdepends=('pipewire-pulse')
 provides=("${pkgname%-git}")
 conflicts=("${pkgname%-git}")
 options=('!lto')
