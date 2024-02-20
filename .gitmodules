@@ -1,3 +1,6 @@
 [submodule "cosmic-edit-git"]
 	path = cosmic-edit-git
 	url = https://aur.archlinux.org/cosmic-edit-git.git
+[submodule "cosmic-icons-git"]
+	path = cosmic-icons-git
+	url = https://aur.archlinux.org/cosmic-icons-git.git
