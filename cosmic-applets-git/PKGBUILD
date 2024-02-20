@@ -9,7 +9,6 @@ url="https://github.com/pop-os/cosmic-applets"
 license=('GPL-3.0-or-later')
 groups=('cosmic')
 depends=(
-#  'cosmic-launcher-git'
 #  'cosmic-panel-git'
   'dbus'
   'hicolor-icon-theme'
