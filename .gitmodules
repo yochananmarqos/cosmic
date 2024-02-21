@@ -7,3 +7,6 @@
 [submodule "cosmic-files-git"]
 	path = cosmic-files-git
 	url = https://aur.archlinux.org/cosmic-files-git.git
+[submodule "cosmic-greeter-git"]
+	path = cosmic-greeter-git
+	url = https://aur.archlinux.org/cosmic-greeter-git.git
