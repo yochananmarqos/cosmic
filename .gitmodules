@@ -10,3 +10,6 @@
 [submodule "cosmic-greeter-git"]
 	path = cosmic-greeter-git
 	url = https://aur.archlinux.org/cosmic-greeter-git.git
+[submodule "cosmic-launcher-git"]
+	path = cosmic-launcher-git
+	url = https://aur.archlinux.org/cosmic-launcher-git.git
