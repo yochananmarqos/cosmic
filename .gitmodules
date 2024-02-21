@@ -34,3 +34,6 @@
 [submodule "xdg-desktop-portal-cosmic-git"]
 	path = xdg-desktop-portal-cosmic-git
 	url = https://aur.archlinux.org/xdg-desktop-portal-cosmic-git.git
+[submodule "cosmic-workspaces-git"]
+	path = cosmic-workspaces-git
+	url = https://aur.archlinux.org/cosmic-workspaces-git.git
