@@ -31,3 +31,6 @@
 [submodule "cosmic-store-git"]
 	path = cosmic-store-git
 	url = https://aur.archlinux.org/cosmic-store-git.git
+[submodule "xdg-desktop-portal-cosmic-git"]
+	path = xdg-desktop-portal-cosmic-git
+	url = https://aur.archlinux.org/xdg-desktop-portal-cosmic-git.git
