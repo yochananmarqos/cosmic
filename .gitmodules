@@ -28,3 +28,6 @@
 [submodule "cosmic-screenshot-git"]
 	path = cosmic-screenshot-git
 	url = https://aur.archlinux.org/cosmic-screenshot-git.git
+[submodule "cosmic-store-git"]
+	path = cosmic-store-git
+	url = https://aur.archlinux.org/cosmic-store-git.git
