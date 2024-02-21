@@ -16,3 +16,6 @@
 [submodule "cosmic-notifications-git"]
 	path = cosmic-notifications-git
 	url = https://aur.archlinux.org/cosmic-notifications-git.git
+[submodule "cosmic-osd-git"]
+	path = cosmic-osd-git
+	url = https://aur.archlinux.org/cosmic-osd-git.git
