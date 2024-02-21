@@ -8,7 +8,11 @@ arch=('any')
 url="https://github.com/pop-os/icon-theme"
 license=('CC-BY-SA-4.0 AND CC-BY-NC-SA-4.0')
 depends=('adwaita-icon-theme')
-makedepends=('git' 'dpkg' 'meson')
+makedepends=(
+  'git'
+  'dpkg'
+  'meson'
+)
 provides=("${pkgname%-git}")
 conflicts=("${pkgname%-git}")
 options=('!strip')
@@ -27,8 +31,8 @@ build() {
 }
 
 package() {
-  DESTDIR="$pkgdir" meson install -C build
+  meson install -C build --destdir "$pkgdir"
 
   cd icon-theme
-  install -Dm644 COPYING LICENSE -t "$pkgdir/usr/share/licenses/${pkgname%-git}"
+  install -Dm644 COPYING LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
