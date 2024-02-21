@@ -9,11 +9,10 @@ url="https://github.com/pop-os/cosmic-settings"
 license=('GPL-3.0-or-later')
 groups=('cosmic')
 depends=(
-#  'cosmic-icons-git'
+  'cosmic-icons-git'
   'fontconfig'
   'libinput'
   'libxkbcommon'
-  'pop-icon-theme'  # TODO: depend on pop-icon-theme-git
   'systemd-libs'
   'wayland'
 )
