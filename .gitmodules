@@ -37,3 +37,6 @@
 [submodule "cosmic-workspaces-git"]
 	path = cosmic-workspaces-git
 	url = https://aur.archlinux.org/cosmic-workspaces-git.git
+[submodule "cosmic-settings-daemon-git"]
+	path = cosmic-settings-daemon-git
+	url = https://aur.archlinux.org/cosmic-settings-daemon-git.git
