@@ -40,3 +40,6 @@
 [submodule "cosmic-settings-daemon-git"]
 	path = cosmic-settings-daemon-git
 	url = https://aur.archlinux.org/cosmic-settings-daemon-git.git
+[submodule "cosmic-session-git"]
+	path = cosmic-session-git
+	url = https://aur.archlinux.org/cosmic-session-git.git
