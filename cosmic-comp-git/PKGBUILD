@@ -2,7 +2,7 @@
 
 pkgname=cosmic-comp-git
 pkgver=r907.849882a
-pkgrel=1
+pkgrel=2
 pkgdesc="Compositor for the COSMIC desktop environment"
 arch=('x86_64' 'aarch64')
 url="https://github.com/pop-os/cosmic-comp"
@@ -24,6 +24,7 @@ makedepends=(
 )
 provides=("${pkgname%-git}")
 conflicts=("${pkgname%-git}")
+backup=('etc/cosmic-comp/config.ron')
 source=('git+https://github.com/pop-os/cosmic-comp.git')
 sha256sums=('SKIP')
 
@@ -50,4 +51,8 @@ build() {
 package() {
   cd "${pkgname%-git}"
   make DESTDIR="$pkgdir" install
+
+  # Keybinding config
+  # https://github.com/pop-os/cosmic-epoch#cosmic-comp
+  install -Dm644 cosmic-comp/config.ron -t "$pkgdir/etc/cosmic-comp/"
 }
