@@ -19,3 +19,6 @@
 [submodule "cosmic-osd-git"]
 	path = cosmic-osd-git
 	url = https://aur.archlinux.org/cosmic-osd-git.git
+[submodule "cosmic-panel-git"]
+	path = cosmic-panel-git
+	url = https://aur.archlinux.org/cosmic-panel-git.git
