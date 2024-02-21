@@ -22,3 +22,6 @@
 [submodule "cosmic-panel-git"]
 	path = cosmic-panel-git
 	url = https://aur.archlinux.org/cosmic-panel-git.git
+[submodule "cosmic-randr-git"]
+	path = cosmic-randr-git
+	url = https://aur.archlinux.org/cosmic-randr-git.git
