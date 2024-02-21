@@ -13,3 +13,6 @@
 [submodule "cosmic-launcher-git"]
 	path = cosmic-launcher-git
 	url = https://aur.archlinux.org/cosmic-launcher-git.git
+[submodule "cosmic-notifications-git"]
+	path = cosmic-notifications-git
+	url = https://aur.archlinux.org/cosmic-notifications-git.git
