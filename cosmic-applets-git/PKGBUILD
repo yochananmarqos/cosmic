@@ -9,8 +9,8 @@ url="https://github.com/pop-os/cosmic-applets"
 license=('GPL-3.0-or-later')
 groups=('cosmic')
 depends=(
-#  'cosmic-icons-git'
-#  'cosmic-panel-git'
+  'cosmic-icons-git'
+  'cosmic-panel-git'
   'dbus'
   'hicolor-icon-theme'
   'libxkbcommon'
