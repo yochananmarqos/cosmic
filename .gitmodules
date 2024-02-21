@@ -25,3 +25,6 @@
 [submodule "cosmic-randr-git"]
 	path = cosmic-randr-git
 	url = https://aur.archlinux.org/cosmic-randr-git.git
+[submodule "cosmic-screenshot-git"]
+	path = cosmic-screenshot-git
+	url = https://aur.archlinux.org/cosmic-screenshot-git.git
