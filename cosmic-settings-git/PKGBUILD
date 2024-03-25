@@ -1,7 +1,7 @@
 # https://aur.archlinux.org/packages/cosmic-settings-git
 
 pkgname=cosmic-settings-git
-pkgver=r195.d25bd34
+pkgver=r252.353cf3f
 pkgrel=1
 pkgdesc="The settings application for the COSMIC desktop environment."
 arch=('x86_64' 'aarch64')
@@ -23,9 +23,12 @@ makedepends=(
   'just'
   'mold'
 )
+optdepends=(
+  'otf-fira-mono: Recommended Mono font'
+  'otf-fira-sans: Recommended Sans font'
+)
 provides=("${pkgname%-git}")
 conflicts=("${pkgname%-git}")
-options=('!lto')
 source=('git+https://github.com/pop-os/cosmic-settings.git')
 sha256sums=('SKIP')
 
@@ -43,6 +46,7 @@ prepare() {
 
 build() {
   cd "${pkgname%-git}"
+  CFLAGS+=" -ffat-lto-objects"
   export CARGO_HOME="$srcdir/cargo-home"
   export RUSTUP_TOOLCHAIN=stable
   just build-vendored
