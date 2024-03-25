@@ -1,30 +1,18 @@
 # https://aur.archlinux.org/packages/cosmic-applets-git
+groups=('modified')
 
 pkgname=cosmic-applets-git
-pkgver=r741.b7c6cc0
+pkgver=r835.9eef1a7
 pkgrel=1
-pkgdesc="WIP applets for cosmic-panel"
+pkgdesc="WIP applets for COSMIC Panel"
 arch=('x86_64' 'aarch64')
 url="https://github.com/pop-os/cosmic-applets"
 license=('GPL-3.0-or-later')
 groups=('cosmic')
-depends=(
-  'cosmic-icons-git'
-  'cosmic-panel-git'
-  'dbus'
-  'hicolor-icon-theme'
-  'libxkbcommon'
-  'pulse-native-provider'
-  'systemd-libs'
-)
-makedepends=(
-  'cargo'
-  'git'
-  'just'
-)
+depends=('cosmic-icons' 'dbus' 'libpulse' 'libxkbcommon')
+makedepends=('cargo' 'git' 'just')
 provides=("${pkgname%-git}")
 conflicts=("${pkgname%-git}")
-options=('!lto')
 source=('git+https://github.com/pop-os/cosmic-applets.git')
 sha256sums=('SKIP')
 
@@ -35,16 +23,17 @@ pkgver() {
 
 prepare() {
   cd "${pkgname%-git}"
+  CFLAGS+=" -ffat-lto-objects"
   export CARGO_HOME="$srcdir/cargo-home"
   export RUSTUP_TOOLCHAIN=stable
-  cargo fetch --locked --target "$CARCH-unknown-linux-gnu"
+  just vendor
 }
 
 build() {
   cd "${pkgname%-git}"
   export CARGO_HOME="$srcdir/cargo-home"
   export RUSTUP_TOOLCHAIN=stable
-  just vendor='1' build-release
+  just build-vendored
 }
 
 package() {
