@@ -1,7 +1,7 @@
 # https://aur.archlinux.org/packages/cosmic-applibrary-git
 
 pkgname=cosmic-applibrary-git
-pkgver=r178.c3306f4
+pkgver=r183.8df76d5
 pkgrel=1
 pkgdesc="WIP COSMIC applibrary"
 arch=('x86_64' 'aarch64')
@@ -18,7 +18,6 @@ makedepends=(
 )
 provides=("${pkgname%-git}")
 conflicts=("${pkgname%-git}")
-options=('!lto')
 source=('git+https://github.com/pop-os/cosmic-applibrary.git')
 sha256sums=('SKIP')
 
@@ -36,6 +35,7 @@ prepare() {
 
 build() {
   cd "${pkgname%-git}"
+  CFLAGS+=" -ffat-lto-objects"
   export CARGO_HOME="$srcdir/cargo-home"
   export RUSTUP_TOOLCHAIN=stable
   just build-vendored
