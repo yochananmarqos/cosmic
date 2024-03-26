@@ -22,7 +22,6 @@ makedepends=(
 )
 provides=("${pkgname%-git}")
 conflicts=("${pkgname%-git}")
-#options=('!lto')
 source=('git+https://github.com/pop-os/cosmic-bg.git')
 sha256sums=('SKIP')
 
