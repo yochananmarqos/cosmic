@@ -1,7 +1,7 @@
 # https://aur.archlinux.org/packages/cosmic-bg-git
 
 pkgname=cosmic-bg-git
-pkgver=r76.a1f0552
+pkgver=r84.742a344
 pkgrel=1
 pkgdes="WIP COSMIC session service which applies backgrounds to displays."
 arch=('x86_64' 'aarch64')
@@ -22,7 +22,7 @@ makedepends=(
 )
 provides=("${pkgname%-git}")
 conflicts=("${pkgname%-git}")
-options=('!lto')
+#options=('!lto')
 source=('git+https://github.com/pop-os/cosmic-bg.git')
 sha256sums=('SKIP')
 
@@ -40,6 +40,7 @@ prepare() {
 
 build() {
   cd "${pkgname%-git}"
+  CFLAGS+=" -ffat-lto-objects"
   export CARGO_HOME="$srcdir/cargo-home"
   export RUSTUP_TOOLCHAIN=stable
   just build-vendored
