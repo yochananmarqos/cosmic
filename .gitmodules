@@ -43,3 +43,6 @@
 [submodule "cosmic-session-git"]
 	path = cosmic-session-git
 	url = https://aur.archlinux.org/cosmic-session-git.git
+[submodule "cosmic-comp-git"]
+	path = cosmic-comp-git
+	url = https://aur.archlinux.org/cosmic-comp-git.git
