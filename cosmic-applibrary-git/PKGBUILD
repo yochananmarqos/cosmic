@@ -1,9 +1,9 @@
 # https://aur.archlinux.org/packages/cosmic-applibrary-git
 
 pkgname=cosmic-applibrary-git
-pkgver=r183.8df76d5
+pkgver=r184.3349462
 pkgrel=1
-pkgdesc="WIP COSMIC applibrary"
+pkgdesc="WIP Cosmic App Library"
 arch=('x86_64' 'aarch64')
 url="https://github.com/pop-os/cosmic-applibrary"
 license=('GPL-3.0-or-later')
