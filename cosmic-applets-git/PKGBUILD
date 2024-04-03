@@ -2,15 +2,25 @@
 groups=('modified')
 
 pkgname=cosmic-applets-git
-pkgver=r835.9eef1a7
+pkgver=r847.2f1b20e
 pkgrel=1
 pkgdesc="WIP applets for COSMIC Panel"
 arch=('x86_64' 'aarch64')
 url="https://github.com/pop-os/cosmic-applets"
 license=('GPL-3.0-or-later')
 groups=('cosmic')
-depends=('cosmic-icons' 'dbus' 'libpulse' 'libxkbcommon')
-makedepends=('cargo' 'git' 'just')
+depends=(
+  'cosmic-icons-git'
+  'dbus'
+  'libinput'
+  'libpulse'
+  'libxkbcommon'
+)
+makedepends=(
+  'cargo'
+  'git'
+  'just'
+)
 provides=("${pkgname%-git}")
 conflicts=("${pkgname%-git}")
 source=('git+https://github.com/pop-os/cosmic-applets.git')
@@ -23,7 +33,6 @@ pkgver() {
 
 prepare() {
   cd "${pkgname%-git}"
-  CFLAGS+=" -ffat-lto-objects"
   export CARGO_HOME="$srcdir/cargo-home"
   export RUSTUP_TOOLCHAIN=stable
   just vendor
@@ -31,6 +40,7 @@ prepare() {
 
 build() {
   cd "${pkgname%-git}"
+  CFLAGS+=" -ffat-lto-objects"
   export CARGO_HOME="$srcdir/cargo-home"
   export RUSTUP_TOOLCHAIN=stable
   just build-vendored
