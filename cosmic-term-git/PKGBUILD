@@ -1,7 +1,7 @@
 # https://aur.archlinux.org/packages/cosmic-term-git
 
 pkgname=cosmic-term-git
-pkgver=r216.01052fa
+pkgver=r262.fdf6195
 pkgrel=1
 pkgdesc="WIP COSMIC Terminal Emulator"
 arch=('x86_64')
@@ -9,7 +9,8 @@ url="https://github.com/pop-os/cosmic-term"
 license=('GPL-3.0-or-later')
 groups=('cosmic')
 depends=(
-  'glibc'
+  'cosmic-icons-git'
+  'gcc-libs'
 )
 makedepends=(
   'cargo'
