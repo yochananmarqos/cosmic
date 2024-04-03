@@ -1,7 +1,7 @@
 # https://aur.archlinux.org/packages/cosmic-settings-git
 
 pkgname=cosmic-settings-git
-pkgver=r252.353cf3f
+pkgver=r278.dd16b92
 pkgrel=1
 pkgdesc="The settings application for the COSMIC desktop environment."
 arch=('x86_64' 'aarch64')
@@ -9,8 +9,11 @@ url="https://github.com/pop-os/cosmic-settings"
 license=('GPL-3.0-or-later')
 groups=('cosmic')
 depends=(
+  'accountsservice'
   'cosmic-icons-git'
+  'cosmic-randr-git'
   'fontconfig'
+  'iso-codes'
   'libinput'
   'libxkbcommon'
   'systemd-libs'
