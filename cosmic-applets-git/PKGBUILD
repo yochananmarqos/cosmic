@@ -2,7 +2,7 @@
 groups=('modified')
 
 pkgname=cosmic-applets-git
-pkgver=r847.2f1b20e
+pkgver=r879.019a981
 pkgrel=1
 pkgdesc="WIP applets for COSMIC Panel"
 arch=('x86_64' 'aarch64')
