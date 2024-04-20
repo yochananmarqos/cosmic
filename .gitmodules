@@ -46,3 +46,18 @@
 [submodule "cosmic-comp-git"]
 	path = cosmic-comp-git
 	url = https://aur.archlinux.org/cosmic-comp-git.git
+[submodule "cosmic-applets-git"]
+	path = cosmic-applets-git
+	url = https://aur.archlinux.org/cosmic-applets-git.git
+[submodule "cosmic-bg-git"]
+	path = cosmic-bg-git
+	url = https://aur.archlinux.org/cosmic-bg-git.git
+[submodule "cosmic-applibrary-git"]
+	path = cosmic-applibrary-git
+	url = https://aur.archlinux.org/cosmic-applibrary-git.git
+[submodule "cosmic-settings-git"]
+	path = cosmic-settings-git
+	url = https://aur.archlinux.org/cosmic-settings-git.git
+[submodule "pop-icon-theme-git"]
+	path = pop-icon-theme-git
+	url = https://aur.archlinux.org/pop-icon-theme-git.git
