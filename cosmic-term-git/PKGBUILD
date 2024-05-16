@@ -1,7 +1,7 @@
 # https://aur.archlinux.org/packages/cosmic-term-git
 
 pkgname=cosmic-term-git
-pkgver=r262.fdf6195
+pkgver=r269.38d6ca4
 pkgrel=1
 pkgdesc="WIP COSMIC Terminal Emulator"
 arch=('x86_64')
