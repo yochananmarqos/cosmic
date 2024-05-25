@@ -1,0 +1,46 @@
+## WIP
+
+# "We aren't planning to ship cosmic-player with the alpha release, 
+# I would not recommend to include it. It has performance issues 
+# due to having a GPU to CPU transfer of frames followed by 
+# CPU conversion from YUV to RGB0"
+# -- Jeremy Soller
+
+pkgname=cosmic-player-git
+pkgver=r54.6fdc5f0
+pkgrel=1
+pkgdesc="WIP COSMIC media player"
+arch=('x86_64' 'aarch64')
+url="https://github.com/pop-os/cosmic-player"
+license=('GPL-3.0-or-later')
+#groups=('cosmic')
+depends=('alsa-lib' 'ffmpeg')
+makedepends=('cargo' 'clang' 'git' 'just')
+provides=("${pkgname%-git}")
+conflicts=("${pkgname%-git}")
+source=('git+https://github.com/pop-os/cosmic-player.git')
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "${pkgname%-git}"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+  cd "${pkgname%-git}"
+  export CARGO_HOME="$srcdir/cargo-home"
+  export RUSTUP_TOOLCHAIN=stable
+  just vendor
+}
+
+build() {
+  cd "${pkgname%-git}"
+  export CARGO_HOME="$srcdir/cargo-home"
+  export RUSTUP_TOOLCHAIN=stable
+  just build-vendored
+}
+
+package() {
+  cd "${pkgname%-git}"
+  just rootdir="$pkgdir" install
+}
