@@ -1,0 +1,41 @@
+## WIP
+
+pkgname=cosmic-reader-git
+pkgver=r13.af692d3
+pkgrel=1
+pkgdesc="WIP COSMIC PDF reader"
+arch=('x86_64' 'aarch64')
+url="https://github.com/pop-os/cosmic-reader"
+license=('unknown')
+#groups=('cosmic')
+depends=('libxkbcommon')
+makedepends=('cargo' 'git')
+provides=("${pkgname%-git}")
+conflicts=("${pkgname%-git}")
+source=('git+https://github.com/pop-os/cosmic-reader.git')
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "${pkgname%-git}"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
+}
+
+prepare() {
+  cd "${pkgname%-git}"
+  export CARGO_HOME="$srcdir/cargo-home"
+  export RUSTUP_TOOLCHAIN=stable
+  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+}
+
+build() {
+  cd "${pkgname%-git}"
+  export CARGO_HOME="$srcdir/cargo-home"
+  export RUSTUP_TOOLCHAIN=stable
+  export CARGO_TARGET_DIR=target
+  cargo build --frozen --release --all-features
+}
+
+package() {
+  cd "${pkgname%-git}"
+  install -Dm755 "target/release/${pkgname%-git}" -t "$pkgdir/usr/bin/"
+}
