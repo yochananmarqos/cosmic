@@ -7,14 +7,14 @@
 # -- Jeremy Soller
 
 pkgname=cosmic-player-git
-pkgver=r54.6fdc5f0
+pkgver=r57.52b9439
 pkgrel=1
 pkgdesc="WIP COSMIC media player"
 arch=('x86_64' 'aarch64')
 url="https://github.com/pop-os/cosmic-player"
 license=('GPL-3.0-or-later')
 #groups=('cosmic')
-depends=('alsa-lib' 'ffmpeg')
+depends=('alsa-lib' 'ffmpeg' 'libxkbcommon')
 makedepends=('cargo' 'clang' 'git' 'just')
 provides=("${pkgname%-git}")
 conflicts=("${pkgname%-git}")
