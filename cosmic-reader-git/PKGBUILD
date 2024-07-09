@@ -1,12 +1,12 @@
 ## WIP
 
 pkgname=cosmic-reader-git
-pkgver=r13.af692d3
+pkgver=r23.c54e8ec
 pkgrel=1
 pkgdesc="WIP COSMIC PDF reader"
 arch=('x86_64' 'aarch64')
 url="https://github.com/pop-os/cosmic-reader"
-license=('unknown')
+license=('GPL-3.0-or-later')
 #groups=('cosmic')
 depends=('libxkbcommon')
 makedepends=('cargo' 'git')
