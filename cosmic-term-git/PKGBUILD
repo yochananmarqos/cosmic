@@ -1,7 +1,7 @@
 # https://aur.archlinux.org/packages/cosmic-term-git
 
 pkgname=cosmic-term-git
-pkgver=r360.a734205
+pkgver=r366.72391e7
 pkgrel=1
 pkgdesc="COSMIC Terminal"
 arch=('x86_64')
@@ -31,14 +31,12 @@ pkgver() {
 
 prepare() {
   cd "${pkgname%-git}"
-  export CARGO_HOME="$srcdir/cargo-home"
   export RUSTUP_TOOLCHAIN=stable
   just vendor
 }
 
 build() {
   cd "${pkgname%-git}"
-  export CARGO_HOME="$srcdir/cargo-home"
   export RUSTUP_TOOLCHAIN=stable
 
   # use mold instead of lld to speed up build
