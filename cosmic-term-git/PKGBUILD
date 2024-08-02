@@ -9,7 +9,7 @@ url="https://github.com/pop-os/cosmic-term"
 license=('GPL-3.0-or-later')
 groups=('cosmic')
 depends=(
-#  'cosmic-icons-git'
+  'cosmic-icons-git'
   'gcc-libs'
   'libxkbcommon'
 )
