@@ -1,7 +1,7 @@
 # https://aur.archlinux.org/packages/cosmic-term-git
 
 pkgname=cosmic-term-git
-pkgver=r366.72391e7
+pkgver=r370.901db39
 pkgrel=1
 pkgdesc="COSMIC Terminal"
 arch=('x86_64')
@@ -9,7 +9,7 @@ url="https://github.com/pop-os/cosmic-term"
 license=('GPL-3.0-or-later')
 groups=('cosmic')
 depends=(
-  'cosmic-icons-git'
+#  'cosmic-icons-git'
   'gcc-libs'
   'libxkbcommon'
 )
@@ -32,7 +32,7 @@ pkgver() {
 prepare() {
   cd "${pkgname%-git}"
   export RUSTUP_TOOLCHAIN=stable
-  just vendor
+  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
 }
 
 build() {
@@ -43,7 +43,7 @@ build() {
   RUSTFLAGS="-C link-arg=-fuse-ld=mold"
 
   # use nice to build with lower priority
-  nice just build-vendored
+  nice just build-release --frozen
 }
 
 package() {
