@@ -1,0 +1,48 @@
+# Requires CFLAGS+=" -ffat-lto-objects" with LTO enabled
+cosmic-applets-git
+cosmic-applibrary-git
+cosmic-edit-git
+cosmic-settings-git
+
+
+pop-icon-theme-git
+cosmic-icons-git
+  - pop-icon-theme-git
+pop-launcher-git
+  - pop-icon-theme-git
+cosmic-comp-git
+cosmic-randr-git
+xdg-desktop-portal-cosmic-git
+cosmic-applibrary-git
+cosmic-applets-git
+  - cosmic-icons-git
+    - pop-icon-theme-git
+cosmic-bg-git
+cosmic-greeter-git
+  - cosmic-comp-git
+cosmic-launcher-git
+  - pop-launcher-git
+    - pop-icon-theme-git
+cosmic-notifications-git
+cosmic-osd-git
+cosmic-panel-git
+cosmic-screenshot-git
+  - xdg-desktop-portal-cosmic-git
+cosmic-settings-daemon-git
+cosmic-settings-git
+  - cosmic-icons-git
+    - pop-icon-theme-git
+  - cosmic-randr-git
+cosmic-workspaces-git
+
+cosmic-edit-git
+  - cosmic-icons-git
+    - pop-icon-theme-git
+cosmic-files-git
+cosmic-store-git
+  - cosmic-icons-git
+    - pop-icon-theme-git
+cosmic-term-git
+  - cosmic-icons-git
+    - pop-icon-theme-git
+
