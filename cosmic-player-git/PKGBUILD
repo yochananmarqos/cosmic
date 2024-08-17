@@ -35,7 +35,6 @@ prepare() {
 build() {
   cd "${pkgname%-git}"
   export RUSTUP_TOOLCHAIN=stable
-  export CARGO_TARGET_DIR=target
 
   # use nice to build with lower priority
   nice just build-release --frozen
