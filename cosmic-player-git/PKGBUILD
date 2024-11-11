@@ -7,15 +7,25 @@
 # -- Jeremy Soller
 
 pkgname=cosmic-player-git
-pkgver=r57.52b9439
+pkgver=r80.d8ee67c
 pkgrel=1
 pkgdesc="WIP COSMIC media player"
 arch=('x86_64' 'aarch64')
 url="https://github.com/pop-os/cosmic-player"
 license=('GPL-3.0-or-later')
-#groups=('cosmic')
-depends=('alsa-lib' 'ffmpeg' 'libxkbcommon')
-makedepends=('cargo' 'clang' 'git' 'just')
+depends=(
+  'gstreamer'
+  'gst-plugins-good'
+  'gst-plugins-base'
+  'libxkbcommon'
+)
+makedepends=(
+  'cargo'
+  'clang'
+  'git'
+  'just'
+  'mold'
+)
 provides=("${pkgname%-git}")
 conflicts=("${pkgname%-git}")
 source=('git+https://github.com/pop-os/cosmic-player.git')
@@ -35,6 +45,9 @@ prepare() {
 build() {
   cd "${pkgname%-git}"
   export RUSTUP_TOOLCHAIN=stable
+
+  # use mold instead of lld to speed up build
+  RUSTFLAGS+=" -C link-arg=-fuse-ld=mold"
 
   # use nice to build with lower priority
   nice just build-release --frozen
